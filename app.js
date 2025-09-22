@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const winston = require('winston')
 const { errorHandler } = require('./utils/errorHandler')
+const { serve, setup } = require('./config/swagger')
 
 // Import routes
 const userRoutes = require('./routes/users')
@@ -49,6 +50,9 @@ app.use((req, res, next) => {
     })
     next()
 })
+
+// Swagger documentation
+app.use('/api-docs', serve, setup)
 
 // Health check endpoint
 app.get('/health', (req, res) => {

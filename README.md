@@ -409,13 +409,51 @@ The platform supports verification for multiple actions across platforms:
 3. Backend verifies action through platform APIs
 4. Verified actions become eligible for rewards
 
-## Development
+## Testing
+
+The project includes comprehensive integration and unit tests using Jest and Supertest.
 
 ### Running Tests
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Test Structure
+- **Integration Tests**: Test complete API endpoints with database
+- **Unit Tests**: Test individual services and utilities
+- **Test Database**: Uses MongoDB Memory Server for isolated testing
+
+### Test Files
+- `tests/integration/` - API endpoint tests
+- `tests/unit/` - Service and utility tests
+- `tests/setup.js` - Test configuration and database setup
+
+## API Documentation
+
+Interactive API documentation is available via Swagger UI:
 
 ```bash
-npm test
+# Start the server
+npm run dev
+
+# Visit the documentation
+http://localhost:3002/api-docs
 ```
+
+The Swagger documentation includes:
+- Complete API endpoint documentation
+- Request/response schemas
+- Authentication requirements
+- Example requests and responses
+
+## Development
 
 ### Code Style
 
